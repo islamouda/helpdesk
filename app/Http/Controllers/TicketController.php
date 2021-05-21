@@ -65,7 +65,7 @@ class TicketController extends Controller
              # code...
              Mail::send('dynamic_email_template',$data,function($m) use($user ,$ticket,$user_id) {
                  $m->to($user->email)->subject('Ticket ID : ' . $ticket->id);
-                 $m->from('iraq.helpdesk@metconetworks.com' , 'New Ticket : '. $user_id->name);
+                 $m->from('asset@metcoapp.com' , 'New Ticket : '. $user_id->name);
           });
          }
      // end email code >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -163,10 +163,8 @@ class TicketController extends Controller
             # code...
             Mail::send('close_email_template',$data,function($m) use($email ,$ticket,$user_id) {
                 $m->to($email)->subject('Close Ticket' . $ticket->id);
-                $m->from('iraq.helpdesk@metconetworks.com' , 'IT Department');
-
-
-
+                $m->from('asset@metcoapp.com' , 'IT Department');
+          
 
             });
 
@@ -176,6 +174,8 @@ class TicketController extends Controller
 
 
     }
+
+    
 
 
     // Ticket::orderBy('priority_id', 'desc' "asc")

@@ -38,7 +38,7 @@ class SendTicketController extends Controller
               # code...
               Mail::send('dynamic_email_template',$data,function($m) use($user_it ,$ticket,$user) {
                   $m->to($user_it->email)->subject('Ticket ID : ' . $ticket->id);
-                  $m->from('iraq.helpdesk@metconetworks.com' , 'New Ticket : '. $user->name);
+                  $m->from('asset@metcoapp.com' , 'New Ticket : '. $user->name);
            });
           }
 
