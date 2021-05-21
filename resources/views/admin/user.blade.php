@@ -160,7 +160,7 @@
             </div>
             <select name="position_id" class="custom-select" id="inputGroupSelect01">
             @foreach ($positions as $position)
-            @if ($position->id == $user->profile['department_id'])
+            @if ($position->id == $user->profile['position_id'])
             <option value="{{ $position->id }}" selected>{{ $position->position }}</option>
             @else
             <option value="{{ $position->id }}" >{{ $position->position }}</option>
